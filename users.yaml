@@ -1,0 +1,26 @@
+# Reference: https://raw.githubusercontent.com/ClickHouse/ClickHouse/master/programs/server/users.yaml.example
+
+profiles:
+  default:
+    max_memory_usage: 10000000000
+    load_balancing: in_order
+    use_uncompressed_cache: 0
+    log_queries: 1
+
+users:
+  default:
+    password: ""
+    networks:
+      ip: "::/0"
+    profile: default
+    quota: default
+
+quotas:
+  default:
+    interval:
+      duration: 3600
+      queries: 0
+      errors: 0
+      result_rows: 0
+      read_rows: 0
+      execution_time: 0
